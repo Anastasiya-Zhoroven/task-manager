@@ -1,0 +1,39 @@
+<div class="form-container">
+<div class="form-title">
+    <mat-icon fontIcon="login"></mat-icon>
+    <b>Login/Sign up</b>
+</div>
+<div>
+    <div class="field-container">
+    <mat-form-field appearance="fill">
+      <mat-label><mat-icon fontIcon="group"></mat-icon> Enter your name</mat-label>
+      <input matInput placeholder="Placeholder">
+    </mat-form-field>
+  </div>
+  <div class="email-input-container">
+    <mat-form-field>
+      <mat-label><mat-icon fontIcon="mail"></mat-icon> Enter your email</mat-label>
+      <input matInput
+             placeholder="pat@example.com"
+             [formControl]="email"
+             (blur)="updateErrorMessage()"
+             required>
+            <mat-error *ngIf="email.invalid">{{errorMessage}}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="password-input-container">
+    <mat-form-field>
+      <mat-label><mat-icon fontIcon="lock_person"></mat-icon> Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <button class="login-button">Login</button>
+  </div>
+  <div class="form-change">
+      <p>Already have an account?</p>
+      <a class="signup-link" routerLink="/login"><b>Login</b></a>
+  </div>
+</div>
