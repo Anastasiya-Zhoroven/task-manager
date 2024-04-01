@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,13 +16,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { DashboardComponent } from './dashboard-component/dashboard-component.component';
+import { ProjectsListComponent } from './dashboard-component/projects-list/projects-list.component';
+import { ProjectComponent } from './dashboard-component/projects-list/project/project.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationFormComponent,
     LoginFormComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProjectsListComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,7 @@ import { DashboardComponent } from './dashboard-component/dashboard-component.co
     MatSidenavModule,
     MatToolbarModule,
     MatCardModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
