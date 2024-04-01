@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { merge } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration-form',
@@ -15,7 +16,7 @@ export class RegistrationFormComponent {
 
   hide = true;
 
-  constructor() {
+  constructor(private router: Router) {
     merge(this.email.statusChanges, this.email.valueChanges)
       .subscribe(() => this.updateErrorMessage());
   }
@@ -29,6 +30,10 @@ export class RegistrationFormComponent {
     } else {
       this.errorMessage = '';
     }
+  }
+
+  loginButtonClick(): void {
+    this.router.navigate(['/dashboard']);
   }
 }
 

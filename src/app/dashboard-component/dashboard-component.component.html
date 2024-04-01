@@ -1,0 +1,30 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+        <div class="nav-container">
+            <div class="icon-tabs">
+                <mat-icon fontIcon="dashboard_customize"></mat-icon>
+                <mat-icon fontIcon="people_outline"></mat-icon>
+            </div>
+                <a class="logout-icon" routerLink="/login">
+                    <mat-icon fontIcon="logout" ></mat-icon>
+                </a>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <span class="dashboard-title"><b>Dashboard</b></span>
+            <mat-form-field appearance="fill" class="search-input">
+                <mat-label>Search here...</mat-label>
+                <input matInput placeholder="Search here...">
+                  <mat-icon matPrefix class="search-icon">search</mat-icon>
+              </mat-form-field>
+              <mat-card-header class="logged-user-info-container">
+                <div mat-card-avatar class="avatar">A</div>
+                <div class="logged-user-info">
+                    <mat-card-title>Akll</mat-card-title>
+                    <mat-card-subtitle>sdsd@klkl</mat-card-subtitle>
+                </div>
+              </mat-card-header>
+          </mat-toolbar>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
