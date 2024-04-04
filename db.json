@@ -1,0 +1,123 @@
+{
+  "users": [{
+      "id": 1,
+      "name": "Anastasiya",
+      "email": "anastasiya96@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 2,
+      "name": "Emerald",
+      "email": "Daniella.Hudson61@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 3,
+      "name": "Jeanette",
+      "email": "Gerson27@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 4,
+      "name": "Baron",
+      "email": "Florida_McKenzie@hotmail.com",
+      "password": "password"
+    },
+    {
+      "id": 5,
+      "name": "Moses",
+      "email": "Laron60@yahoo.com",
+      "password": "password"
+    },
+    {
+      "id": 6,
+      "name": "Libbie",
+      "email": "Neha56@yahoo.com",
+      "password": "password"
+    },
+    {
+      "id": 7,
+      "name": "Friedrich",
+      "email": "Taurean_Herzog@yahoo.com",
+      "password": "password"
+    },
+    {
+      "id": 8,
+      "name": "Juwan",
+      "email": "Christ18@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 9,
+      "name": "Josephine",
+      "email": "America86@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 10,
+      "name": "Araceli",
+      "email": "Janiya_Hahn@hotmail.com",
+      "password": "password"
+    },
+    {
+      "id": 11,
+      "name": "Jermey",
+      "email": "Woodrow_Stroman62@gmail.com",
+      "password": "password"
+    }
+  ],
+  "projects": [{
+      "id": 1,
+      "team": [1, 2, 3, 5, 7],
+      "title": "Intelligent Frozen Fish",
+      "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design"
+    },
+    {
+      "id": 2,
+      "team": [2, 3, 4, 5, 6, 7, 8],
+      "title": "Generic Metal Salad",
+      "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality"
+    }
+  ],
+  "tasks": [{
+      "id": 1,
+      "project_id": 1,
+      "due_date": 1716156000000,
+      "assignees": [1, 2, 3],
+      "title": "Quas repellat beatae consequatur ratione est quibusdam voluptatem.",
+      "description": "Recusandae voluptate non quo maxime et consequatur. Veritatis voluptatem est tempora fuga totam optio qui. Magni quia id vitae non id consequatur. Vel voluptatem mollitia nobis. Nesciunt quis delectus rerum repudiandae unde similique illo error. Nihil laboriosam maxime sed perspiciatis tenetur doloremque nihil repellendus iste.\n \rQuia voluptate explicabo ullam qui. Veritatis nisi molestiae autem eum magni omnis nesciunt nihil tenetur. Doloribus rerum consectetur dolores nostrum nisi cupiditate nam assumenda. Aut possimus commodi optio ipsum molestiae totam. Voluptates et repudiandae dolorem aut eius dolorem distinctio voluptas facere.\n \rFugiat rem voluptatum tempore minima placeat odio ea est maxime. Repellat eligendi ut officiis illum similique nihil. Deserunt non sint voluptatum quo cumque. Et ea enim in non nemo quod esse dolores excepturi. Nostrum ipsum ea est aliquid cum aut veritatis."
+    },
+    {
+      "id": 2,
+      "project_id": 2,
+      "due_date": 1716588000000,
+      "assignees": [3, 4, 7, 8],
+      "title": "Similique optio impedit ut et saepe aut.",
+      "description": "Adipisci ut libero ut quidem. Ipsa pariatur et magnam voluptas laboriosam et accusantium. Reiciendis ipsum odio deserunt omnis eum voluptatibus molestias unde voluptas. Eum harum saepe tenetur. Quos et eligendi molestiae sunt atque ab itaque voluptas qui. Ullam ut repudiandae dicta voluptas velit velit ut.\n \rQuam asperiores excepturi nesciunt deserunt nulla est sint. Harum eum doloribus tenetur amet dignissimos amet non sit. Labore quia nemo eius laboriosam optio. Ut molestiae sed molestias corporis aperiam dolor.\n \rExercitationem hic numquam vel similique. Aut reprehenderit natus est fugiat. Necessitatibus ut eos et eum in nulla. Suscipit est nostrum consequatur vel delectus asperiores earum ab id."
+    },
+    {
+      "id": 3,
+      "project_id": 2,
+      "due_date": 1719266400000,
+      "assignees": [5, 6],
+      "title": "Expedita sunt aliquid possimus excepturi rerum est error.",
+      "description": "Cum aut tenetur voluptates magnam eos ad reiciendis. Aut aspernatur quos fugit quos. Voluptatum rerum odio fugiat.\n \rEos ut non qui fuga. Voluptatum ullam molestiae excepturi ut similique sint voluptatem magnam eaque. Ratione id ad iste rerum doloribus cupiditate sit. Saepe autem qui harum voluptas esse incidunt aut ipsam et.\n \rPariatur laboriosam est eum perferendis corporis est fugit ex. Neque corporis autem harum quo aut quam. A unde ipsam est eum quia rerum repellendus. Veniam est ducimus ut consequatur sunt dignissimos exercitationem sunt et."
+    },
+    {
+      "id": 4,
+      "project_id": 1,
+      "due_date": 1718143200000,
+      "assignees": [1, 3, 5, 7],
+      "title": "Mollitia nesciunt et labore qui numquam cum minima unde repellendus.",
+      "description": "Aut facilis est perspiciatis officiis quia ab reprehenderit consequuntur. Quasi et reprehenderit est corrupti quis eaque tenetur nulla. Nostrum asperiores aut aut eveniet dolores aut est voluptas. Fugiat sapiente alias amet non deleniti est aut. Soluta quo eius laudantium ducimus aut sequi.\n \rVoluptate nisi perspiciatis enim quasi assumenda sed. Harum eum fugiat incidunt. Mollitia qui laudantium ad quisquam asperiores neque quod fugit vel. Ut quia tempore dolore et enim explicabo.\n \rCum laboriosam adipisci itaque placeat reprehenderit nemo dolor aut porro. Aut atque cum accusamus est alias rerum quis qui. Error sint quidem eos consequatur distinctio qui similique quod perferendis. Delectus dicta unde voluptas. Perspiciatis sequi eos omnis."
+    },
+    {
+      "id": 5,
+      "project_id": 2,
+      "due_date": 1719957600000,
+      "assignees": [2, 4, 6],
+      "title": "Totam amet et quia omnis veritatis.",
+      "description": "Inventore voluptatibus in commodi rem similique ab tenetur cumque architecto. Eum natus perferendis. Aut laboriosam facere qui mollitia. Officiis aut provident natus saepe praesentium nemo laborum occaecati.\n \rCulpa dolor et quas et quia laborum quae esse aliquid. Modi quia laudantium dolores voluptatibus asperiores earum officia. Ipsa veniam vel tenetur sint necessitatibus qui quibusdam voluptates et. Sed iure veritatis.\n \rEst dolorem est illum autem id. Dignissimos repellendus ut. Id quae dolorem laborum harum. Voluptatem odit autem explicabo est perspiciatis. Sed labore id culpa rerum. Hic rerum facere iste doloremque aliquid."
+    }
+  ]
+}
