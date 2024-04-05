@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,18 +14,22 @@ import { MatDividerModule } from '@angular/material/divider';
 import { DragDropModule, CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegistrationFormComponent } from './registration-form/registration-form.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { DashboardComponent } from './dashboard-component/dashboard-component.component';
-import { ProjectsListComponent } from './dashboard-component/projects-list/projects-list.component';
-import { ProjectComponent } from './dashboard-component/projects-list/project/project.component';
-import { TasksListComponent } from './dashboard-component/tasks-list/tasks-list.component';
-import { TaskCardComponent } from './dashboard-component/tasks-list/task-card/task-card.component';
+import { RegistrationFormComponent } from './forms/registration-form/registration-form.component';
+import { LoginFormComponent } from './forms/login-form/login-form.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { ProjectsListComponent } from './components/projects-list/projects-list.component';
+import { ProjectComponent } from './components/projects-list/project/project.component';
+import { TasksListComponent } from './components/tasks-list/tasks-list.component';
+import { TaskCardComponent } from './components/tasks-list/task-card/task-card.component';
 import { ContentEditableDirective } from './content-editable.directive';
+import { UsersListComponent } from './components/users-list/users-list.component';
 
 @NgModule({
   declarations: [
@@ -31,15 +37,17 @@ import { ContentEditableDirective } from './content-editable.directive';
     AppComponent,
     RegistrationFormComponent,
     LoginFormComponent,
-    DashboardComponent,
+    LayoutComponent,
     ProjectsListComponent,
     ProjectComponent,
     TasksListComponent,
-    TaskCardComponent
+    TaskCardComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -56,6 +64,9 @@ import { ContentEditableDirective } from './content-editable.directive';
     CdkDrag,
     MatSelectModule,
     MatMenuModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

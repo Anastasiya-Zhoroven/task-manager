@@ -4,12 +4,11 @@ import { merge } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-registration-form',
-  templateUrl: './registration-form.component.html',
-  styleUrls: ['./registration-form.component.scss']
+  selector: 'app-login-form',
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.scss']
 })
-export class RegistrationFormComponent {
-  
+export class LoginFormComponent {
   email = new FormControl('', [Validators.required, Validators.email]);
 
   errorMessage = '';
@@ -33,9 +32,6 @@ export class RegistrationFormComponent {
   }
 
   loginButtonClick(): void {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/']);
   }
 }
-
-
-

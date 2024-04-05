@@ -25,11 +25,24 @@
       padding: 1.5rem;
   }
 
-  .logout-icon {
+  .nav-icon {
     margin-top: auto;
     padding: 1.5rem;
     cursor: pointer;
   }
+
+  .nav-icon mat-icon:hover {
+    color: #FF7629;
+  }
+
+  .nav-icon mat-icon:focus {
+    color: #FF7629;
+  }
+
+  .nav-icon mat-icon.active {
+    color: #FF7629;
+  }
+
   
   mat-icon {
     color: white;
