@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Project } from 'src/app/interfaces/project.interface';
 
 @Component({
   selector: 'app-project',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent {
-  // project: Project
+  @Input() project!: Project;
 }

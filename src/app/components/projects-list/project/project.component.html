@@ -1,12 +1,13 @@
 <div class="project-container">
-    <a [routerLink]="['/projects','1','tasks']">
-      <h3>Project 1</h3>
-      <p class="project-desription">HJhdfjhgjdgjdgdjngjdfngjdfngjkfnbjkfnjfHJhdfjhgjdgjdgdjngjdfngjdfngjkfnbjkfnjf</p>
+    <a [routerLink]="['/projects', project.id,'tasks']">
+      <h3>{{project.title}}</h3>
+      <p class="project-desription">{{project.description}}</p>
       <mat-divider></mat-divider>
       <div class="team-label-container">
         <div><b>Team</b></div>
-        <button mat-mini-fab color="accent">
-          <mat-icon>plus_one</mat-icon>
+        <button mat-mini-fab color="accent" class="team-number-button">
+          <b>+ {{project.team.length}}</b>
+          <!-- <mat-icon>plus_two</mat-icon> -->
         </button>
       </div>
     </a>

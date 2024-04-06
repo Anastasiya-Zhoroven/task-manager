@@ -9,7 +9,7 @@
                     <mat-icon [ngClass]="{ 'active':  getActiveIcon() === 'users' }" fontIcon="people_outline"></mat-icon>
                 </a>
             </div>
-                <a class="nav-icon" routerLink="/login">
+                <a (click)="logout()" class="nav-icon">
                     <mat-icon fontIcon="logout" ></mat-icon>
                 </a>
         </div>
@@ -23,10 +23,10 @@
                   <mat-icon matPrefix class="search-icon">search</mat-icon>
               </mat-form-field>
               <mat-card-header class="logged-user-info-container">
-                <div mat-card-avatar class="avatar">A</div>
+                <div mat-card-avatar class="avatar">{{currentUserName && currentUserName[0]}}</div>
                 <div class="logged-user-info">
-                    <mat-card-title>Akll</mat-card-title>
-                    <mat-card-subtitle>sdsd@klkl</mat-card-subtitle>
+                    <mat-card-title>{{currentUserName}}</mat-card-title>
+                    <mat-card-subtitle>{{currentUserEmail}}</mat-card-subtitle>
                 </div>
               </mat-card-header>
           </mat-toolbar>

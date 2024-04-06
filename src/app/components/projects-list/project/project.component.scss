@@ -19,6 +19,12 @@ h3 {
     margin: 0;
 }
 
+p {
+    font-size: .8rem;
+    height: 2.8rem;
+    overflow: hidden;
+}
+
 .project-desription {
     overflow-wrap: break-word;
     width: 100%;
@@ -29,6 +35,10 @@ h3 {
     justify-content: space-between;
     align-items:center;
     margin-top: 1rem;
+}
+
+.team-number-button {
+    font-size: 1rem;
 }
 
 mat-icon {

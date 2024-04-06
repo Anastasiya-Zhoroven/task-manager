@@ -16,14 +16,17 @@
         <h2>To do</h2>
         <div
           cdkDropList
+          id="todo"
           #todoList="cdkDropList"
           [cdkDropListData]="todo"
           [cdkDropListConnectedTo]="[doneList, inprogressList]"
           class="example-list"
           (cdkDropListDropped)="drop($event)">
-          <app-task-card cdkDrag></app-task-card>
-          <app-task-card cdkDrag></app-task-card>
-            <!-- <div *ngFor="let item of todo; track item" class="example-box" cdkDrag>{{item}}</div> -->
+          <!-- <app-task-card cdkDrag></app-task-card> -->
+          <!-- <app-task-card cdkDrag></app-task-card> -->
+          <app-task-card *ngFor="let task of todo" cdkDrag [task]="task"></app-task-card>
+            <!-- <div *ngFor="let task of todo"></div> -->
+
         </div>
       </div>
     
@@ -31,13 +34,15 @@
         <h2>In progress</h2>
         <div
           cdkDropList
+          id="inprogress"
           #inprogressList="cdkDropList"
           [cdkDropListData]="inprogress"
           [cdkDropListConnectedTo]="[doneList, todoList]"
           class="example-list"
           (cdkDropListDropped)="drop($event)">
-          <app-task-card cdkDrag></app-task-card>
-            <!-- <div *ngFor="let item of inprogress; track item" class="example-box" cdkDrag>{{item}}</div> -->
+          <app-task-card *ngFor="let task of inprogress" cdkDrag [task]="task"></app-task-card>
+          <!-- <app-task-card cdkDrag></app-task-card> -->
+            <!-- <div *ngFor="let item of inprogress; track item" cdkDrag>{{item}}</div> -->
         </div>
       </div>
     
@@ -45,13 +50,15 @@
         <h2>Done</h2>
         <div
           cdkDropList
+          id="done"
           #doneList="cdkDropList"
           [cdkDropListData]="done"
           [cdkDropListConnectedTo]="[todoList, inprogressList]"
           class="example-list"
           (cdkDropListDropped)="drop($event)">
-          <app-task-card cdkDrag></app-task-card>
-            <!-- <div *ngFor="let item of done; track item" class="example-box" cdkDrag>{{item}}</div> -->
+          <app-task-card *ngFor="let task of done" cdkDrag [task]="task"></app-task-card>
+          <!-- <app-task-card cdkDrag></app-task-card> -->
+            <!-- <div *ngFor="let item of done; track item" cdkDrag>{{item}}</div> -->
         </div>
       </div>
     </div>    

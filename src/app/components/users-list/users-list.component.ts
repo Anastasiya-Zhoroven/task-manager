@@ -19,7 +19,7 @@ export class UsersListComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private readonly usersService: UsersService) {
-    this.dataSource = new MatTableDataSource<User>([]); // Initialize with empty data source
+    this.dataSource = new MatTableDataSource<User>([]);
   }
 
   ngOnInit(): void {

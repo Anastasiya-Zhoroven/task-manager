@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent {
+  currentUserName:string | null = localStorage.getItem("name");
+  currentUserEmail:string | null = localStorage.getItem("email");
+
   constructor(private router: Router) { }
 
   getActiveIcon(): string {
@@ -30,5 +33,10 @@ export class LayoutComponent {
       return 'Tasks';
     }
     return '';
+  }
+
+  logout(): void {
+    localStorage.clear();
+    this.router.navigateByUrl('/login');
   }
 }
