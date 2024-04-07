@@ -1,14 +1,29 @@
 <div class="project-container">
+  <div class="title-container">
     <a [routerLink]="['/projects', project.id,'tasks']">
       <h3>{{project.title}}</h3>
-      <p class="project-desription">{{project.description}}</p>
-      <mat-divider></mat-divider>
-      <div class="team-label-container">
-        <div><b>Team</b></div>
-        <button mat-mini-fab color="accent" class="team-number-button">
-          <b>+ {{project.team.length}}</b>
-          <!-- <mat-icon>plus_two</mat-icon> -->
-        </button>
-      </div>
     </a>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="more-button">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="editProjectClick()">
+        <mat-icon>edit</mat-icon>
+        <span>Edit</span>
+      </button>
+      <button mat-menu-item (click)="deleteProjectClick()">
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+      </button>
+    </mat-menu>
+  </div>
+    <p class="project-desription">{{project.description}}</p>
+    <mat-divider></mat-divider>
+    <div class="team-label-container">
+      <div><b>Team</b></div>
+      <button mat-mini-fab color="accent" class="team-number-button">
+        <b>+ {{project.team.length}}</b>
+        <!-- <mat-icon>plus_two</mat-icon> -->
+      </button>
+    </div>
 </div>

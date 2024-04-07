@@ -1,5 +1,5 @@
 export interface Project {
-    id: number
+    id?: number
     team: number[]
     title: string
     description: string

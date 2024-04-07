@@ -17,6 +17,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import { TasksListComponent } from './components/tasks-list/tasks-list.component
 import { TaskCardComponent } from './components/tasks-list/task-card/task-card.component';
 import { ContentEditableDirective } from './content-editable.directive';
 import { UsersListComponent } from './components/users-list/users-list.component';
+import { ProjectFormComponent } from './forms/project-form/project-form.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { UsersListComponent } from './components/users-list/users-list.component
     ProjectComponent,
     TasksListComponent,
     TaskCardComponent,
-    UsersListComponent
+    UsersListComponent,
+    ProjectFormComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +70,7 @@ import { UsersListComponent } from './components/users-list/users-list.component
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

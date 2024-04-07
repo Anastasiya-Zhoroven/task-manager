@@ -51,3 +51,10 @@ $task-manager-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; }
+
+:host {
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 16px 16px;
+}

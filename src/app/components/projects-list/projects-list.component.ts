@@ -1,7 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Project } from 'src/app/interfaces/project.interface';
 import { ProjectsService } from 'src/app/services/projects.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ProjectFormComponent } from '../../forms/project-form/project-form.component';
 
 @Component({
   selector: 'app-projects-list',
@@ -10,15 +11,34 @@ import { ProjectsService } from 'src/app/services/projects.service';
   encapsulation: ViewEncapsulation.None
 })
 export class ProjectsListComponent {
-  // projectsSubject: Observable<Project[]> = new Observable<Project[]>();
   projects: Project[] = [];
-  constructor(private readonly projectsService: ProjectsService) {
-    projectsService.getProjects().subscribe(projects => {
+
+  constructor(private readonly projectsService: ProjectsService, public dialog: MatDialog) {
+    this.fetchData();
+  }
+
+  fetchData(): void {
+    this.projectsService.getProjects().subscribe(projects => {
       this.projects = projects;
     });
   }
-  // ngOnInit (): void {
-  //   this.projectsSubject = this.projectsService.projectsSubject.asObservable();
-  // }
 
+  openForm(project?: Project) {
+    let dialogRef = this.dialog.open(ProjectFormComponent, {
+      width: '40%',
+      height: 'auto',
+      data: project || {}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.fetchData();
+      }
+    });
+  }
+
+  deleteProject(project: Project) {
+    this.projectsService.deleteProject(project).subscribe(result => {
+      this.fetchData();
+    });
+  }
 }
