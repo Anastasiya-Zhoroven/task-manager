@@ -27,7 +27,7 @@ export class ProjectsListComponent {
     let dialogRef = this.dialog.open(ProjectFormComponent, {
       width: '40%',
       height: 'auto',
-      data: project || {}
+      data: project
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {

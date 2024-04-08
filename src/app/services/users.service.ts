@@ -12,7 +12,7 @@ export class UsersService {
 
   constructor (private readonly http: HttpClient) { }
 
-  getUsers (userEmail?: string, userPassword?: string): Observable<User[]> {
+  getUsers (userEmail?: string, userPassword?: string, ids?: number[]): Observable<User[]> {
     let params = new HttpParams();
     
     if (userEmail) {
@@ -20,6 +20,11 @@ export class UsersService {
     }
     if (userPassword) {
       params = params.append('password', userPassword);
+    }
+    if (ids) {
+      for (let id of ids) {
+        params = params.append('id', id);
+      }
     }
 
     return this.http.get<User[]>(`${this.apiUrl}/users`, { params: params });

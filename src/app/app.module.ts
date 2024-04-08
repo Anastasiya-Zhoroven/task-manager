@@ -18,6 +18,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +34,7 @@ import { TaskCardComponent } from './components/tasks-list/task-card/task-card.c
 import { ContentEditableDirective } from './content-editable.directive';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { ProjectFormComponent } from './forms/project-form/project-form.component';
+import { TaskFormComponent } from './forms/task-form/task-form.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,8 @@ import { ProjectFormComponent } from './forms/project-form/project-form.componen
     TasksListComponent,
     TaskCardComponent,
     UsersListComponent,
-    ProjectFormComponent
+    ProjectFormComponent,
+    TaskFormComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +75,8 @@ import { ProjectFormComponent } from './forms/project-form/project-form.componen
     MatSortModule,
     MatTableModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

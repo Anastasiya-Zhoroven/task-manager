@@ -1,65 +1,34 @@
 <app-layout>
   <div class="buttons-container">
     <div class="add-task-button-container">
-    <button mat-mini-fab  color="primary"calss="add-task-button">
+      <button mat-mini-fab color="primary" calss="add-task-button" (click)="openForm()">
         <mat-icon>add</mat-icon>
       </button>
       <p>Add new task</p>
     </div>
     <button mat-flat-button color="primary" class="filter-button">
-            <div>Filter</div>
-            <mat-icon>filter_list</mat-icon>
+      <div>Filter</div>
+      <mat-icon>filter_list</mat-icon>
     </button>
-    </div>
-    <div class="drag-drop-group-container">
+  </div>
+  <div class="drag-drop-group-container">
     <div class="example-container">
-        <h2>To do</h2>
-        <div
-          cdkDropList
-          id="todo"
-          #todoList="cdkDropList"
-          [cdkDropListData]="todo"
-          [cdkDropListConnectedTo]="[doneList, inprogressList]"
-          class="example-list"
-          (cdkDropListDropped)="drop($event)">
-          <!-- <app-task-card cdkDrag></app-task-card> -->
-          <!-- <app-task-card cdkDrag></app-task-card> -->
-          <app-task-card *ngFor="let task of todo" cdkDrag [task]="task"></app-task-card>
-            <!-- <div *ngFor="let task of todo"></div> -->
-
-        </div>
+      <h2>To do</h2>
+      <div cdkDropList id="todo" #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList, inprogressList]" class="example-list" (cdkDropListDropped)="drop($event)">
+        <app-task-card *ngFor="let task of todo" cdkDrag [task]="task" [users]="users" (editTask)="openForm($event)" (deleteTask)="deleteTask($event)"></app-task-card>
       </div>
-    
-      <div class="example-container">
-        <h2>In progress</h2>
-        <div
-          cdkDropList
-          id="inprogress"
-          #inprogressList="cdkDropList"
-          [cdkDropListData]="inprogress"
-          [cdkDropListConnectedTo]="[doneList, todoList]"
-          class="example-list"
-          (cdkDropListDropped)="drop($event)">
-          <app-task-card *ngFor="let task of inprogress" cdkDrag [task]="task"></app-task-card>
-          <!-- <app-task-card cdkDrag></app-task-card> -->
-            <!-- <div *ngFor="let item of inprogress; track item" cdkDrag>{{item}}</div> -->
-        </div>
+    </div>
+    <div class="example-container">
+      <h2>In progress</h2>
+      <div cdkDropList id="inprogress" #inprogressList="cdkDropList" [cdkDropListData]="inprogress" [cdkDropListConnectedTo]="[doneList, todoList]" class="example-list" (cdkDropListDropped)="drop($event)">
+        <app-task-card *ngFor="let task of inprogress" cdkDrag [task]="task" [users]="users" (editTask)="openForm($event)" (deleteTask)="deleteTask($event)"></app-task-card>
       </div>
-    
-      <div class="example-container">
-        <h2>Done</h2>
-        <div
-          cdkDropList
-          id="done"
-          #doneList="cdkDropList"
-          [cdkDropListData]="done"
-          [cdkDropListConnectedTo]="[todoList, inprogressList]"
-          class="example-list"
-          (cdkDropListDropped)="drop($event)">
-          <app-task-card *ngFor="let task of done" cdkDrag [task]="task"></app-task-card>
-          <!-- <app-task-card cdkDrag></app-task-card> -->
-            <!-- <div *ngFor="let item of done; track item" cdkDrag>{{item}}</div> -->
-        </div>
+    </div>
+    <div class="example-container">
+      <h2>Done</h2>
+      <div cdkDropList id="done" #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList, inprogressList]" class="example-list" (cdkDropListDropped)="drop($event)">
+        <app-task-card *ngFor="let task of done" cdkDrag [task]="task" [users]="users" (editTask)="openForm($event)" (deleteTask)="deleteTask($event)"></app-task-card>
       </div>
-    </div>    
+    </div>
+  </div>
 </app-layout>

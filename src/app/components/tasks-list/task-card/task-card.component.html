@@ -2,34 +2,40 @@
     <mat-card-header>
       <div class="task-card-title-container">
           <mat-card-title><b>{{task.title}}</b></mat-card-title>
-          <mat-card-subtitle><mat-icon fontIcon="calendar_month"></mat-icon>09.04.2024</mat-card-subtitle>
+          <mat-card-subtitle><mat-icon fontIcon="calendar_month"></mat-icon>{{task.due_date | date:'MM/dd/yyyy'}}</mat-card-subtitle>
       </div>
       <div class="delete-task-button-container">
-      <button mat-mini-fab color="primary" class="delete-task-button">
-        <mat-icon>delete</mat-icon>
-      </button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="more-button">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="editTaskClick()">
+            <mat-icon>edit</mat-icon>
+            <span>Edit</span>
+          </button>
+          <button mat-menu-item (click)="deleteTaskClick()">
+            <mat-icon>delete</mat-icon>
+            <span>Delete</span>
+          </button>
+        </mat-menu>
     </div>
     </mat-card-header>
     <mat-card-content >
         <p appContentEditable>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+              {{task.description}}
         </p>
     </mat-card-content>
     <mat-card-actions>
         <div><b>Assigned to:</b></div>
         <div class="card-bottom-container">
         <div class="assagnee-container">
-          <div mat-card-avatar class="avatar">A</div>
-          <div mat-card-avatar class="avatar">A</div>
-          <div mat-card-avatar class="avatar">A</div>
+          <div mat-card-avatar class="avatar" *ngFor="let selectedAssignee of selectedAssignees">{{selectedAssignee.name[0].toUpperCase()}}</div>
         </div>
         <button mat-icon-button [matMenuTriggerFor]="optionsMenu">
             <mat-icon>add</mat-icon>
           </button>
           <mat-menu #optionsMenu="matMenu">
-            <button mat-menu-item (click)="optionSelected('Option 1')">Option 1</button>
-            <button mat-menu-item (click)="optionSelected('Option 2')">Option 2</button>
-            <button mat-menu-item (click)="optionSelected('Option 3')">Option 3</button>
+            <button mat-menu-item *ngFor="let assigneeToAdd of assigneesToAdd" (click)="selectAssignee(assigneeToAdd.id)">{{assigneeToAdd.name}}</button>
           </mat-menu>
         </div>
     </mat-card-actions>
