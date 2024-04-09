@@ -13,8 +13,8 @@ export class LayoutComponent implements OnInit {
   @Output() search = new EventEmitter<string>();
 
   searchControl = new FormControl();
-  currentUserName:string | null = localStorage.getItem("name");
-  currentUserEmail:string | null = localStorage.getItem("email");
+  currentUserName: string | null = localStorage.getItem("name");
+  currentUserEmail: string | null = localStorage.getItem("email");
 
   constructor(private router: Router) { }
 

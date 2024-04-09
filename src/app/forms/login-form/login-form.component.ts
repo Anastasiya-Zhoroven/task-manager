@@ -16,14 +16,14 @@ export class LoginFormComponent {
   emailErrorMessage = '';
   passwordErrorMessage = '';
   hide = true;
-  userEmail: string =  '';
-  userPassword: string =  '';
+  userEmail: string = '';
+  userPassword: string = '';
 
   constructor(private router: Router, private readonly usersService: UsersService) {
     merge(this.email.statusChanges, this.email.valueChanges)
-    .subscribe(() => this.updateEmailErrorMessage());
+      .subscribe(() => this.updateEmailErrorMessage());
     merge(this.password.statusChanges, this.password.valueChanges)
-    .subscribe(() => this.updatePasswordErrorMessage());
+      .subscribe(() => this.updatePasswordErrorMessage());
   }
 
   updateEmailErrorMessage() {
@@ -57,13 +57,13 @@ export class LoginFormComponent {
     if (!this.validateForm()) {
       return;
     }
-    this.usersService.getUsers({'userEmail': this.userEmail.toLocaleLowerCase(), 'userPassword': sha256(this.userPassword)}).subscribe(
+    this.usersService.getUsers({ 'userEmail': this.userEmail.toLocaleLowerCase(), 'userPassword': sha256(this.userPassword) }).subscribe(
       (response) => {
-        if(response.length > 0){
+        if (response.length > 0) {
           localStorage.setItem("email", this.userEmail.toLocaleLowerCase());
           localStorage.setItem("name", response[0].name);
           this.router.navigate(['/']);
-        }else{
+        } else {
           this.email.setErrors({ 'invalid': true });
         }
       }

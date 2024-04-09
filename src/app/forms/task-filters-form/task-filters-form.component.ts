@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormGroup, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { SelectOption } from 'src/app/interfaces/selectOption.interface';
 import { TaskFilters } from 'src/app/interfaces/taskFilters.interface';
 import { User } from 'src/app/interfaces/user.interface';
@@ -16,18 +16,18 @@ import { User } from 'src/app/interfaces/user.interface';
 })
 export class TaskFiltersFormComponent {
   @Output() onApply = new EventEmitter<TaskFilters>();
-  @Input() users!: User[]; 
+  @Input() users!: User[];
 
   form!: FormGroup;
   dueDateForm!: FormGroup;
   orderBy: string = 'asc';
 
   sortByOptions: SelectOption[] = [
-    {value: 'id', viewValue: 'Created date'},
-    {value: 'due_date', viewValue: 'Due date'},
+    { value: 'id', viewValue: 'Created date' },
+    { value: 'due_date', viewValue: 'Due date' },
   ];
 
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -61,7 +61,7 @@ export class TaskFiltersFormComponent {
       'start': this.dueDateForm.value['start'] && this.dueDateForm.value['start'].getTime(),
       'end': this.dueDateForm.value['end'] && this.dueDateForm.value['end'].getTime()
     };
-    let data = {...this.form.value, 'dueDate': dueDate, 'orderBy': this.orderBy};
+    let data = { ...this.form.value, 'dueDate': dueDate, 'orderBy': this.orderBy };
     this.onApply.emit(data);
   }
 }

@@ -16,7 +16,7 @@ export class TaskCardComponent implements OnInit {
   selectedAssignees: User[] = [];
   assigneesToAdd: User[] = [];
 
-  constructor(private readonly tasksService: TasksService) {}
+  constructor(private readonly tasksService: TasksService) { }
 
   ngOnInit() {
     this.filterAssignees();

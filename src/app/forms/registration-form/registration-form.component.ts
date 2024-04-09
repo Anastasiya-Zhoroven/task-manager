@@ -67,7 +67,6 @@ export class RegistrationFormComponent {
   }
 
   validateForm(): boolean {
-    debugger;
     for (let control of [this.name, this.email, this.password]) {
       control.markAsTouched();
     }
@@ -78,7 +77,7 @@ export class RegistrationFormComponent {
     if (!this.validateForm()) {
       return;
     }
-    this.usersService.getUsers({'userEmail': this.userEmail.toLocaleLowerCase()}).subscribe(
+    this.usersService.getUsers({ 'userEmail': this.userEmail.toLocaleLowerCase() }).subscribe(
       (response) => {
         if (response.length > 0) {
           this.email.setErrors({ 'invalid': true });

@@ -26,9 +26,9 @@ export class UsersListComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     this.fetchUsers()
   }
-  
+
   fetchUsers(queryString?: string): void {
-    this.usersService.getUsers({query: queryString}).subscribe(users => {
+    this.usersService.getUsers({ query: queryString }).subscribe(users => {
       this.dataSource = new MatTableDataSource(users);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;

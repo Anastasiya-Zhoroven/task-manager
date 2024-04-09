@@ -71,7 +71,7 @@ import { Page404Component } from './page404/page404.component';
     MatCardModule,
     MatDividerModule,
     DragDropModule,
-    CdkDropList, 
+    CdkDropList,
     CdkDrag,
     MatSelectModule,
     MatMenuModule,

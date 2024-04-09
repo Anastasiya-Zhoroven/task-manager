@@ -38,7 +38,7 @@ export class TasksListComponent {
     projectsService.getProject(projectId).subscribe(
       (response) => {
         this.project = response;
-        usersService.getUsers({'ids': this.project.team}).subscribe(users => {
+        usersService.getUsers({ 'ids': this.project.team }).subscribe(users => {
           this.users = users;
           this.fetchData();
         });

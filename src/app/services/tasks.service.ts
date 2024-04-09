@@ -10,7 +10,7 @@ import { TaskFilters } from '../interfaces/taskFilters.interface';
 export class TasksService {
   apiUrl: string = 'http://localhost:3000';
 
-  constructor (private readonly http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
   getTasks(projectId: number, queryString?: string, filters?: TaskFilters): Observable<Task[]> {
     let params = new HttpParams();
@@ -36,7 +36,7 @@ export class TasksService {
       }
     }
 
-    return this.http.get<Task[]>(`${this.apiUrl}/tasks`, {params: params}).pipe(
+    return this.http.get<Task[]>(`${this.apiUrl}/tasks`, { params: params }).pipe(
       map((tasks: Task[]) => {
         if (filters?.assignees?.length) {
           tasks = tasks.filter(task => filters?.assignees?.filter(assigneeId => task.assignees.includes(assigneeId)).length)
@@ -54,7 +54,7 @@ export class TasksService {
     return this.http.put<Task>(`${this.apiUrl}/tasks/${task.id}`, task);
   }
 
-  addTask (task: Task): Observable<Task> {
+  addTask(task: Task): Observable<Task> {
     return this.http.post<Task>(`${this.apiUrl}/tasks`, task).pipe(
       catchError(error => {
         console.error('An error occurred:', error);
@@ -63,7 +63,7 @@ export class TasksService {
     );
   }
 
-  deleteTask (task: Task): Observable<Task> {
+  deleteTask(task: Task): Observable<Task> {
     return this.http.delete<Task>(`${this.apiUrl}/tasks/${task.id}`).pipe(
       catchError(error => {
         console.error('An error occurred:', error);

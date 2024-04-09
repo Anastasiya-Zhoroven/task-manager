@@ -1,27 +1,29 @@
 h3 {
-    margin: 1rem;
+  margin: 1rem;
 }
+
 .projects-list-container {
-    display: flex;
-    gap: 2rem;
-    padding: 2rem;
-    margin: 1rem;
-    background-color: white;
-    border-radius: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+  flex-wrap: wrap;
 }
+
 .add-project-button-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    border: 2px dashed #8f8f8f;
-    border-radius: 1rem;
-    background-color:#eeeeee ;
-    width: 14rem;
-    height: 14rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #8f8f8f;
+  border-radius: 1rem;
+  background-color: #eeeeee;
+  width: 14rem;
+  height: 14rem;
 }
 
 .add-project-button {
-    color: #FF7629;
+  color: #FF7629;
 }

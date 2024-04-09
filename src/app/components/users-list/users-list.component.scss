@@ -3,19 +3,20 @@
 }
 
 table {
-    width: 100%;
-  }
-  
-  .mat-mdc-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  td, th {
-    width: 25%;
-  }
+  width: 100%;
+}
 
-  .mat-mdc-no-data-row{
-    text-align: center;
-    font-size: 16px;
-  }
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+.mat-mdc-no-data-row {
+  text-align: center;
+  font-size: 16px;
+}

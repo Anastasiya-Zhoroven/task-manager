@@ -11,9 +11,9 @@ import { UserFilters } from '../interfaces/userFilters.interface';
 export class UsersService {
   apiUrl: string = 'http://localhost:3000';
 
-  constructor (private readonly http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
-  getUsers (options?: UserFilters): Observable<User[]> {
+  getUsers(options?: UserFilters): Observable<User[]> {
     let params = new HttpParams();
 
     if (options?.userEmail) {
@@ -39,7 +39,7 @@ export class UsersService {
     );
   }
 
-  addUser (user: User): Observable<User> {
+  addUser(user: User): Observable<User> {
     return this.http.post<User>(`${this.apiUrl}/users`, user).pipe(
       catchError(error => {
         console.error('An error occurred:', error);

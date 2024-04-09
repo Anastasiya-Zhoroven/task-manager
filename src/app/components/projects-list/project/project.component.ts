@@ -16,7 +16,7 @@ export class ProjectComponent {
   selectedUsers: User[] = [];
   usersToAdd: User[] = [];
 
-  constructor(private readonly projectsService: ProjectsService) {}
+  constructor(private readonly projectsService: ProjectsService) { }
 
   ngOnInit() {
     this.filterTeam();

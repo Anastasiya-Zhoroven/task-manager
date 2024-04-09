@@ -6,25 +6,13 @@
       </button>
       <p>Add new task</p>
     </div>
-    <button
-      mat-flat-button color="primary"
-      [matMenuTriggerFor]="menu"
-      #filtersTrigger="matMenuTrigger"
-      class="filter-button"
-      matBadge="{{badgeCount}}"
-      matBadgePosition="before"
-      matBadgeColor="accent"
-    >
+    <button mat-flat-button color="primary" [matMenuTriggerFor]="menu" #filtersTrigger="matMenuTrigger" class="filter-button" matBadge="{{badgeCount}}" matBadgePosition="before" matBadgeColor="accent">
       <div>Filter</div>
       <mat-icon>filter_list</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <app-task-filters-form
-      (click)="$event.stopPropagation(); $event.preventDefault()"
-      (onApply)="filtersFormSubmit(filtersTrigger, $event)"
-      [users]="users"
-      >
-    </app-task-filters-form>
+      <app-task-filters-form (click)="$event.stopPropagation(); $event.preventDefault()" (onApply)="filtersFormSubmit(filtersTrigger, $event)" [users]="users">
+      </app-task-filters-form>
     </mat-menu>
   </div>
   <div class="drag-drop-group-container">
