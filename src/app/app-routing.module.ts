@@ -5,13 +5,14 @@ import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { ProjectsListComponent } from './components/projects-list/projects-list.component';
 import { TasksListComponent } from './components/tasks-list/tasks-list.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: 'registration', component: RegistrationFormComponent },
-  { path: 'projects/:id/tasks', component: TasksListComponent },
   { path: 'login', component: LoginFormComponent },
-  { path: 'users', component: UsersListComponent },
-  { path: '', component: ProjectsListComponent },
+  { path: 'registration', component: RegistrationFormComponent },
+  { path: 'projects/:id/tasks', component: TasksListComponent, canActivate: [AuthGuard] },
+  { path: 'users', component: UsersListComponent, canActivate: [AuthGuard] },
+  { path: '', component: ProjectsListComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
