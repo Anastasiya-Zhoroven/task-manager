@@ -14,6 +14,7 @@ import { User } from '../../interfaces/user.interface';
 export class UsersListComponent implements AfterViewInit, OnInit {
   displayedColumns: string[] = ['id', 'name', 'email'];
   dataSource: MatTableDataSource<User>;
+  searchValue: string = '';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -23,7 +24,11 @@ export class UsersListComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit(): void {
-    this.usersService.getUsers().subscribe(users => {
+    this.fetchUsers()
+  }
+  
+  fetchUsers(queryString?: string): void {
+    this.usersService.getUsers({query: queryString}).subscribe(users => {
       this.dataSource = new MatTableDataSource(users);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -35,12 +40,8 @@ export class UsersListComponent implements AfterViewInit, OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+  search(queryString: string) {
+    this.searchValue = queryString;
+    this.fetchUsers(queryString);
   }
 }

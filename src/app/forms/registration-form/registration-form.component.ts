@@ -74,7 +74,7 @@ export class RegistrationFormComponent {
     if (!this.validateForm()) {
       return;
     }
-    this.usersService.getUsers(this.userEmail).subscribe(
+    this.usersService.getUsers({'userEmail': this.userEmail}).subscribe(
       (response) => {
         if (response.length > 0) {
           this.email.setErrors({ 'invalid': true });

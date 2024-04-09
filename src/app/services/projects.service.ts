@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Project } from '../interfaces/project.interface';
 
@@ -10,8 +10,12 @@ export class ProjectsService {
   apiUrl: string = 'http://localhost:3000';
   constructor (private readonly http: HttpClient) { }
 
-  getProjects (): Observable<Project[]> {
-    return this.http.get<Project[]>(`${this.apiUrl}/projects`);
+  getProjects (queryString?: string): Observable<Project[]> {
+    let params = new HttpParams();
+    if (queryString) {
+      params = params.append('q', queryString);
+    }
+    return this.http.get<Project[]>(`${this.apiUrl}/projects`, { params: params });
   }
 
   addProject (project: Project): Observable<Project> {

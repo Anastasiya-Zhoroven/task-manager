@@ -129,6 +129,17 @@
       ],
       "title": "Generic Metal Salad",
       "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality"
+    },
+    {
+      "title": "new project",
+      "description": "description",
+      "team": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": 3
     }
   ],
   "tasks": [
@@ -192,7 +203,6 @@
       "status": "done",
       "assignees": [
         2,
-        1,
         5
       ],
       "title": "Totam amet et quia omnis veritatis.",

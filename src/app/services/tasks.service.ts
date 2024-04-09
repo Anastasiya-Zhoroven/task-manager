@@ -1,7 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, Subscription, throwError } from 'rxjs';
+import { catchError, map, Observable, Subscription, throwError } from 'rxjs';
 import { Task } from '../interfaces/task.interface';
+import { TaskFilters } from '../interfaces/taskFilters.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,38 @@ export class TasksService {
 
   constructor (private readonly http: HttpClient) { }
 
-  getTasks(projectId: number): Observable<Task[]> {
-    return this.http.get<Task[]>(`${this.apiUrl}/tasks`, {params: {'project_id': projectId}});
+  getTasks(projectId: number, queryString?: string, filters?: TaskFilters): Observable<Task[]> {
+    let params = new HttpParams();
+
+    params = params.append('project_id', projectId);
+
+    if (queryString) {
+      params = params.append('q', queryString);
+    }
+
+    if (filters?.dueDate?.start) {
+      params = params.append('due_date_gte', filters.dueDate.start);
+    }
+
+    if (filters?.dueDate?.end) {
+      params = params.append('due_date_lte', filters.dueDate.end);
+    }
+
+    if (filters?.sortBy) {
+      params = params.append('_sort', filters.sortBy);
+      if (filters?.orderBy) {
+        params = params.append('_order', filters.orderBy);
+      }
+    }
+
+    return this.http.get<Task[]>(`${this.apiUrl}/tasks`, {params: params}).pipe(
+      map((tasks: Task[]) => {
+        if (filters?.assignees?.length) {
+          tasks = tasks.filter(task => filters?.assignees?.filter(assigneeId => task.assignees.includes(assigneeId)).length)
+        }
+        return tasks;
+      })
+    );
   }
 
   updateTask(task: Task): Observable<Task> {

@@ -12,13 +12,14 @@ import { ProjectFormComponent } from '../../forms/project-form/project-form.comp
 })
 export class ProjectsListComponent {
   projects: Project[] = [];
+  searchValue: string = '';
 
   constructor(private readonly projectsService: ProjectsService, public dialog: MatDialog) {
     this.fetchData();
   }
 
   fetchData(): void {
-    this.projectsService.getProjects().subscribe(projects => {
+    this.projectsService.getProjects(this.searchValue).subscribe(projects => {
       this.projects = projects;
     });
   }
@@ -40,5 +41,10 @@ export class ProjectsListComponent {
     this.projectsService.deleteProject(project).subscribe(result => {
       this.fetchData();
     });
+  }
+
+  search(queryString: string) {
+    this.searchValue = queryString;
+    this.fetchData();
   }
 }

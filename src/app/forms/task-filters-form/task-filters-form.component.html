@@ -1,0 +1,41 @@
+<form [formGroup]="form">
+  <div class="field-container">
+    <mat-form-field>
+      <mat-label>Assignees</mat-label>
+      <mat-select formControlName="assignees" multiple>
+        <mat-option *ngFor="let user of users" [value]="user.id">{{user.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="field-container">
+
+    <mat-form-field>
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [formGroup]="dueDateForm" [rangePicker]="dueDatePicker">
+        <input matStartDate formControlName="start" placeholder="Start date">
+        <input matEndDate formControlName="end" placeholder="End date">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matIconSuffix [for]="dueDatePicker"></mat-datepicker-toggle>
+      <mat-date-range-picker #dueDatePicker></mat-date-range-picker>
+
+      <mat-error *ngIf="dueDateForm.controls['start'].hasError('matStartDateInvalid')">Invalid start date</mat-error>
+      <mat-error *ngIf="dueDateForm.controls['end'].hasError('matEndDateInvalid')">Invalid end date</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="field-container order-by-section">
+    <mat-form-field subscriptSizing="dynamic" appearance="fill">
+      <mat-label>Sort By</mat-label>
+      <mat-select formControlName="sortBy">
+        <mat-option *ngFor="let option of sortByOptions" [value]="option.value">{{option.viewValue}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button (click)="updateOrder()" *ngIf="orderBy == 'desc'" [disabled]="!form.controls['sortBy'].value">
+      <mat-icon class="material-icons">south</mat-icon>
+    </button>
+    <button (click)="updateOrder()" *ngIf="orderBy == 'asc'" [disabled]="!form.controls['sortBy'].value">
+      <mat-icon class="material-icons">north</mat-icon>
+    </button>
+  </div>
+  <button type="submit" (click)="onSubmit()" class="submit-button">Apply</button>
+  <button type="submit" (click)="clearFilters()" class="clear-button">Clear filters</button>
+</form>

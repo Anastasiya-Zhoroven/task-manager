@@ -56,7 +56,7 @@ export class LoginFormComponent {
     if (!this.validateForm()) {
       return;
     }
-    this.usersService.getUsers(this.userEmail, this.userPassword).subscribe(
+    this.usersService.getUsers({'userEmail': this.userEmail, 'userPassword': this.userPassword}).subscribe(
       (response) => {
         if(response.length > 0){
           localStorage.setItem("email",  this.userEmail);
@@ -67,5 +67,5 @@ export class LoginFormComponent {
         }
       }
     );
-    }  
+  }
 }

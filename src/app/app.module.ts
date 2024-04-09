@@ -19,6 +19,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -35,6 +37,7 @@ import { ContentEditableDirective } from './content-editable.directive';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { ProjectFormComponent } from './forms/project-form/project-form.component';
 import { TaskFormComponent } from './forms/task-form/task-form.component';
+import { TaskFiltersFormComponent } from './forms/task-filters-form/task-filters-form.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,8 @@ import { TaskFormComponent } from './forms/task-form/task-form.component';
     TaskCardComponent,
     UsersListComponent,
     ProjectFormComponent,
-    TaskFormComponent
+    TaskFormComponent,
+    TaskFiltersFormComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +81,8 @@ import { TaskFormComponent } from './forms/task-form/task-form.component';
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatRadioModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

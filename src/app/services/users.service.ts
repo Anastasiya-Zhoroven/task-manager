@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { User } from '../interfaces/user.interface';
+import { UserFilters } from '../interfaces/userFilters.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,17 +13,20 @@ export class UsersService {
 
   constructor (private readonly http: HttpClient) { }
 
-  getUsers (userEmail?: string, userPassword?: string, ids?: number[]): Observable<User[]> {
+  getUsers (options?: UserFilters): Observable<User[]> {
     let params = new HttpParams();
-    
-    if (userEmail) {
-      params = params.append('email', userEmail);
+
+    if (options?.userEmail) {
+      params = params.append('email', options.userEmail);
     }
-    if (userPassword) {
-      params = params.append('password', userPassword);
+    if (options?.userPassword) {
+      params = params.append('password', options.userPassword);
     }
-    if (ids) {
-      for (let id of ids) {
+    if (options?.query) {
+      params = params.append('q', options.query);
+    }
+    if (options?.ids) {
+      for (let id of options.ids) {
         params = params.append('id', id);
       }
     }

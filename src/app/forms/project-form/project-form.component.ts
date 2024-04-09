@@ -20,7 +20,7 @@ export class ProjectFormComponent implements OnInit {
         this.users = users
       });
     }
-  
+
     ngOnInit(): void {
       this.form = this.fb.group({
         title: ['', [Validators.required]],
