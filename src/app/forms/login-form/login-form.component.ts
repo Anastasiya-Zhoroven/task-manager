@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { merge } from 'rxjs';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
+import * as sha256 from 'sha256';
 
 @Component({
   selector: 'app-login-form',
@@ -56,7 +57,7 @@ export class LoginFormComponent {
     if (!this.validateForm()) {
       return;
     }
-    this.usersService.getUsers({'userEmail': this.userEmail.toLocaleLowerCase(), 'userPassword': this.userPassword}).subscribe(
+    this.usersService.getUsers({'userEmail': this.userEmail.toLocaleLowerCase(), 'userPassword': sha256(this.userPassword)}).subscribe(
       (response) => {
         if(response.length > 0){
           localStorage.setItem("email", this.userEmail.toLocaleLowerCase());

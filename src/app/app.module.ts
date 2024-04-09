@@ -37,6 +37,7 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { ProjectFormComponent } from './forms/project-form/project-form.component';
 import { TaskFormComponent } from './forms/task-form/task-form.component';
 import { TaskFiltersFormComponent } from './forms/task-filters-form/task-filters-form.component';
+import { Page404Component } from './page404/page404.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { TaskFiltersFormComponent } from './forms/task-filters-form/task-filters
     UsersListComponent,
     ProjectFormComponent,
     TaskFormComponent,
-    TaskFiltersFormComponent
+    TaskFiltersFormComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,

@@ -89,6 +89,18 @@
       "email": "fsfsfs@fxgs.ru",
       "password": "12345",
       "id": 15
+    },
+    {
+      "name": "Testds",
+      "email": "jdfkjdk@kjk.ru",
+      "password": "3339ca2ade4f1bc9830a2245b82c4053f45fc076226fff496506ce5e9e780cec",
+      "id": 16
+    },
+    {
+      "name": "Test",
+      "email": "test@gmail.com",
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+      "id": 17
     }
   ],
   "projects": [

@@ -6,6 +6,7 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { ProjectsListComponent } from './components/projects-list/projects-list.component';
 import { TasksListComponent } from './components/tasks-list/tasks-list.component';
 import { AuthGuard } from './auth.guard';
+import { Page404Component } from './page404/page404.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'projects/:id/tasks', component: TasksListComponent, canActivate: [AuthGuard] },
   { path: 'users', component: UsersListComponent, canActivate: [AuthGuard] },
   { path: '', component: ProjectsListComponent, canActivate: [AuthGuard] },
+  { path: '**', component: Page404Component }
 ];
 
 @NgModule({

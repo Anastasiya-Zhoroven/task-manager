@@ -4,6 +4,7 @@ import { merge } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
+import * as sha256 from 'sha256';
 
 @Component({
   selector: 'app-registration-form',
@@ -82,7 +83,7 @@ export class RegistrationFormComponent {
         if (response.length > 0) {
           this.email.setErrors({ 'invalid': true });
         } else {
-          let newUser: User = { name: this.userName, email: this.userEmail.toLocaleLowerCase(), password: this.userPassword }
+          let newUser: User = { name: this.userName, email: this.userEmail.toLocaleLowerCase(), password: sha256(this.userPassword) }
           this.usersService.addUser(newUser).subscribe(
             (response) => {
               this.router.navigate(['/']);
