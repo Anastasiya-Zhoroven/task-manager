@@ -56,11 +56,11 @@ export class LoginFormComponent {
     if (!this.validateForm()) {
       return;
     }
-    this.usersService.getUsers({'userEmail': this.userEmail, 'userPassword': this.userPassword}).subscribe(
+    this.usersService.getUsers({'userEmail': this.userEmail.toLocaleLowerCase(), 'userPassword': this.userPassword}).subscribe(
       (response) => {
         if(response.length > 0){
-          localStorage.setItem("email",  this.userEmail);
-          localStorage.setItem("name",  response[0].name);
+          localStorage.setItem("email", this.userEmail.toLocaleLowerCase());
+          localStorage.setItem("name", response[0].name);
           this.router.navigate(['/']);
         }else{
           this.email.setErrors({ 'invalid': true });

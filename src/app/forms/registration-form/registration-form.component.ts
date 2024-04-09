@@ -42,6 +42,8 @@ export class RegistrationFormComponent {
       this.emailErrorMessage = 'Not a valid email';
     } else if (this.email.hasError('invalid')) {
       this.emailErrorMessage = 'This email already exists';
+    } else if (this.email.hasError('pattern')) {
+      this.emailErrorMessage = 'Pattern not matched: [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
     } else {
       this.emailErrorMessage = '';
     }
@@ -64,6 +66,7 @@ export class RegistrationFormComponent {
   }
 
   validateForm(): boolean {
+    debugger;
     for (let control of [this.name, this.email, this.password]) {
       control.markAsTouched();
     }
@@ -74,12 +77,12 @@ export class RegistrationFormComponent {
     if (!this.validateForm()) {
       return;
     }
-    this.usersService.getUsers({'userEmail': this.userEmail}).subscribe(
+    this.usersService.getUsers({'userEmail': this.userEmail.toLocaleLowerCase()}).subscribe(
       (response) => {
         if (response.length > 0) {
           this.email.setErrors({ 'invalid': true });
         } else {
-          let newUser: User = { name: this.userName, email: this.userEmail, password: this.userPassword }
+          let newUser: User = { name: this.userName, email: this.userEmail.toLocaleLowerCase(), password: this.userPassword }
           this.usersService.addUser(newUser).subscribe(
             (response) => {
               this.router.navigate(['/']);

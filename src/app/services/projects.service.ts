@@ -15,7 +15,21 @@ export class ProjectsService {
     if (queryString) {
       params = params.append('q', queryString);
     }
-    return this.http.get<Project[]>(`${this.apiUrl}/projects`, { params: params });
+    return this.http.get<Project[]>(`${this.apiUrl}/projects`, { params: params }).pipe(
+      catchError(error => {
+        console.error('An error occurred:', error);
+        return throwError('Something went wrong; please try again later.');
+      })
+    );;
+  }
+
+  getProject (id: number): Observable<Project> {
+    return this.http.get<Project>(`${this.apiUrl}/projects/${id}`).pipe(
+      catchError(error => {
+        console.error('An error occurred:', error);
+        return throwError('Something went wrong; please try again later.');
+      })
+    );;
   }
 
   addProject (project: Project): Observable<Project> {
@@ -43,8 +57,5 @@ export class ProjectsService {
         return throwError('Something went wrong; please try again later.');
       })
     );
-  }
-  getProject (id: number): Observable<Project> {
-    return this.http.get<Project>(`${this.apiUrl}/projects/${id}`);
   }
 }

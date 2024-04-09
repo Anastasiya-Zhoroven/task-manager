@@ -31,7 +31,12 @@ export class UsersService {
       }
     }
 
-    return this.http.get<User[]>(`${this.apiUrl}/users`, { params: params });
+    return this.http.get<User[]>(`${this.apiUrl}/users`, { params: params }).pipe(
+      catchError(error => {
+        console.error('An error occurred:', error);
+        return throwError('Something went wrong; please try again later.');
+      })
+    );
   }
 
   addUser (user: User): Observable<User> {

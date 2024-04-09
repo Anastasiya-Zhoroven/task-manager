@@ -33,7 +33,6 @@ import { ProjectsListComponent } from './components/projects-list/projects-list.
 import { ProjectComponent } from './components/projects-list/project/project.component';
 import { TasksListComponent } from './components/tasks-list/tasks-list.component';
 import { TaskCardComponent } from './components/tasks-list/task-card/task-card.component';
-import { ContentEditableDirective } from './content-editable.directive';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { ProjectFormComponent } from './forms/project-form/project-form.component';
 import { TaskFormComponent } from './forms/task-form/task-form.component';
@@ -41,7 +40,6 @@ import { TaskFiltersFormComponent } from './forms/task-filters-form/task-filters
 
 @NgModule({
   declarations: [
-    ContentEditableDirective,
     AppComponent,
     RegistrationFormComponent,
     LoginFormComponent,

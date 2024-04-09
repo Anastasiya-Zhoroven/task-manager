@@ -65,9 +65,6 @@ export class TasksListComponent {
   }
 
   drop(event: CdkDragDrop<Task[]>) {
-    console.log('event', event)
-    console.log('container', event.container.data)
-    console.log('previousContainer', event.previousContainer.data)
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {

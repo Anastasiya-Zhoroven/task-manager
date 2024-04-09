@@ -18,7 +18,7 @@
         <mat-label>
           <mat-icon fontIcon="mail"></mat-icon> Enter your email
         </mat-label>
-        <input matInput [formControl]="email" (blur)="updateEmailErrorMessage()" [(ngModel)]="userEmail" name="userEmail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <input matInput [formControl]="email" (blur)="updateEmailErrorMessage()" [(ngModel)]="userEmail" name="userEmail" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
         <mat-error *ngIf="email.invalid">{{emailErrorMessage}}</mat-error>
       </mat-form-field>
     </div>

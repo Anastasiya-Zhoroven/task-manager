@@ -23,7 +23,6 @@ export class ProjectComponent {
   }
 
   filterTeam() {
-    console.log(this.users);
     this.selectedUsers = this.users.filter(user => user?.id && this.project.team.includes(user?.id));
     this.usersToAdd = this.users.filter(user => user?.id && !this.project.team.includes(user?.id));
   }

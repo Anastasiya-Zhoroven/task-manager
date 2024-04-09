@@ -42,6 +42,10 @@ export class TasksService {
           tasks = tasks.filter(task => filters?.assignees?.filter(assigneeId => task.assignees.includes(assigneeId)).length)
         }
         return tasks;
+      }),
+      catchError(error => {
+        console.error('An error occurred:', error);
+        return throwError('Something went wrong; please try again later.');
       })
     );
   }
@@ -58,6 +62,7 @@ export class TasksService {
       })
     );
   }
+
   deleteTask (task: Task): Observable<Task> {
     return this.http.delete<Task>(`${this.apiUrl}/tasks/${task.id}`).pipe(
       catchError(error => {
@@ -66,6 +71,4 @@ export class TasksService {
       })
     );
   }
-
-
 }
