@@ -7,6 +7,6 @@
       </button>
       <p>Add new project</p>
     </div>
-    <app-project *ngFor="let project of projects" [project]="project" (editProject)="openForm($event)" (deleteProject)="deleteProject($event)"></app-project>
+    <app-project *ngFor="let project of projects" [project]="project" [users]="users" (editProject)="openForm($event)" (deleteProject)="deleteProject($event)"></app-project>
   </div>
 </app-layout>

@@ -19,10 +19,10 @@ export class TaskCardComponent implements OnInit {
   constructor(private readonly tasksService: TasksService) {}
 
   ngOnInit() {
-    this.filterTasks();
+    this.filterAssignees();
   }
 
-  filterTasks() {
+  filterAssignees() {
     this.selectedAssignees = this.users.filter(user => user?.id && this.task.assignees.includes(user?.id));
     this.assigneesToAdd = this.users.filter(user => user?.id && !this.task.assignees.includes(user?.id));
   }
@@ -39,7 +39,7 @@ export class TaskCardComponent implements OnInit {
     if (userId) {
       this.task.assignees.push(userId);
       this.tasksService.updateTask(this.task).subscribe(
-        (response) => this.filterTasks()
+        (response) => this.filterAssignees()
       )
     }
   }

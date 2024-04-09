@@ -65,42 +65,6 @@
       "name": "Jermey",
       "email": "Woodrow_Stroman62@gmail.com",
       "password": "password"
-    },
-    {
-      "name": "Anastasiya",
-      "email": "sdfds@gmail.com",
-      "password": "12345",
-      "id": 12
-    },
-    {
-      "name": "wewfwf",
-      "email": "wfwvv@gmail.com",
-      "password": "23456",
-      "id": 13
-    },
-    {
-      "name": "Jujnsdnskd",
-      "email": "sfsfs@gmail.com",
-      "password": "98989",
-      "id": 14
-    },
-    {
-      "name": "kdgacuhe",
-      "email": "dfuhifdkuhk@fhd.com",
-      "password": "password",
-      "id": 15
-    },
-    {
-      "name": "test",
-      "email": "test@test.com",
-      "password": "password",
-      "id": 16
-    },
-    {
-      "name": "fdfdf",
-      "email": "dfsds@sfs.erer",
-      "password": "fdgdgd",
-      "id": 17
     }
   ],
   "projects": [
@@ -137,7 +101,8 @@
         1,
         2,
         3,
-        4
+        4,
+        5
       ],
       "id": 3
     }

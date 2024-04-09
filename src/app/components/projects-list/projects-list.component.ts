@@ -3,6 +3,8 @@ import { Project } from 'src/app/interfaces/project.interface';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ProjectFormComponent } from '../../forms/project-form/project-form.component';
+import { UsersService } from 'src/app/services/users.service';
+import { User } from 'src/app/interfaces/user.interface';
 
 @Component({
   selector: 'app-projects-list',
@@ -13,9 +15,13 @@ import { ProjectFormComponent } from '../../forms/project-form/project-form.comp
 export class ProjectsListComponent {
   projects: Project[] = [];
   searchValue: string = '';
+  users: User[] = [];
 
-  constructor(private readonly projectsService: ProjectsService, public dialog: MatDialog) {
-    this.fetchData();
+  constructor(private readonly projectsService: ProjectsService, private readonly usersService: UsersService, public dialog: MatDialog) {
+    usersService.getUsers().subscribe(users => {
+      this.users = users;
+      this.fetchData();
+    });
   }
 
   fetchData(): void {

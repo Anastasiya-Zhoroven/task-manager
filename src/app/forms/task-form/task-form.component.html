@@ -18,7 +18,7 @@
       <mat-label>
         <mat-icon fontIcon="description"></mat-icon> Description
       </mat-label>
-      <input matInput type="text" formControlName="description">
+      <textarea matInput formControlName="description" cols="10" rows="10"></textarea>
       <mat-error *ngIf="form.get('description')?.invalid && form.get('description')?.touched">
         {{ getDescriptionErrorMessage() }}
       </mat-error>

@@ -21,9 +21,11 @@
     <mat-divider></mat-divider>
     <div class="team-label-container">
       <div><b>Team</b></div>
-      <button mat-mini-fab color="accent" class="team-number-button">
+      <button mat-mini-fab color="accent" class="team-number-button" [matMenuTriggerFor]="optionsMenu">
         <b>+ {{project.team.length}}</b>
-        <!-- <mat-icon>plus_two</mat-icon> -->
       </button>
+      <mat-menu #optionsMenu="matMenu">
+        <button mat-menu-item *ngFor="let userToAdd of usersToAdd" (click)="addUser(userToAdd.id)">{{userToAdd.name}}</button>
+      </mat-menu>
     </div>
 </div>
