@@ -4,67 +4,79 @@
       "id": 1,
       "name": "Anastasiya",
       "email": "anastasiya96@gmail.com",
-      "password": "password"
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     },
     {
       "id": 2,
       "name": "Emerald",
       "email": "daniella.hudson61@gmail.com",
-      "password": "password"
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     },
     {
       "id": 3,
       "name": "Jeanette",
       "email": "gerson27@gmail.com",
-      "password": "password"
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     },
     {
       "id": 4,
       "name": "Baron",
       "email": "florida_mckenzie@hotmail.com",
-      "password": "password"
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     },
     {
       "id": 5,
       "name": "Moses",
       "email": "laron60@yahoo.com",
-      "password": "password"
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     },
     {
       "id": 6,
       "name": "Libbie",
       "email": "neha56@yahoo.com",
-      "password": "password"
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     },
     {
       "id": 7,
       "name": "Friedrich",
       "email": "taurean_herzog@yahoo.com",
-      "password": "password"
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     },
     {
       "id": 8,
       "name": "Juwan",
       "email": "christ18@gmail.com",
-      "password": "password"
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     },
     {
       "id": 9,
       "name": "Josephine",
       "email": "america86@gmail.com",
-      "password": "password"
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     },
     {
       "id": 10,
       "name": "Araceli",
       "email": "janiya_hahn@hotmail.com",
-      "password": "password"
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
     },
     {
       "id": 11,
       "name": "Jermey",
       "email": "woodrow_stroman62@gmail.com",
-      "password": "password"
+      "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
+    },
+    {
+      "name": "Test",
+      "email": "test@gmail.com",
+      "password": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+      "id": 12
+    },
+    {
+      "name": "Vik",
+      "email": "vik@test.com",
+      "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+      "id": 13
     }
   ],
   "projects": [
@@ -73,26 +85,48 @@
       "team": [
         1,
         2,
-        3,
+        4,
         5,
-        7
+        7,
+        10
       ],
-      "title": "Intelligent Frozen Fish",
+      "title": "Intelligent Frozen Fishd",
       "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design"
     },
     {
       "id": 2,
       "team": [
-        2,
         3,
         4,
         5,
         6,
         7,
-        8
+        8,
+        10
       ],
       "title": "Generic Metal Salad",
       "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality"
+    },
+    {
+      "title": "Test",
+      "description": "Test",
+      "team": [
+        1,
+        2,
+        11,
+        12
+      ],
+      "id": 3
+    },
+    {
+      "title": "Find a job",
+      "description": "I want to find a job",
+      "team": [
+        9,
+        12,
+        13
+      ],
+      "id": 4
     }
   ],
   "tasks": [
@@ -161,6 +195,17 @@
       ],
       "title": "Totam amet et quia omnis veritatis.",
       "description": "Inventore voluptatibus in commodi rem similique ab tenetur cumque architecto. Eum natus perferendis. Aut laboriosam facere qui mollitia. Officiis aut provident natus saepe praesentium nemo laborum occaecati.\n \rCulpa dolor et quas et quia laborum quae esse aliquid. Modi quia laudantium dolores voluptatibus asperiores earum officia. Ipsa veniam vel tenetur sint necessitatibus qui quibusdam voluptates et. Sed iure veritatis.\n \rEst dolorem est illum autem id. Dignissimos repellendus ut. Id quae dolorem laborum harum. Voluptatem odit autem explicabo est perspiciatis. Sed labore id culpa rerum. Hic rerum facere iste doloremque aliquid."
+    },
+    {
+      "title": "Update CV",
+      "description": "Update CV",
+      "assignees": [
+        1
+      ],
+      "status": "inprogress",
+      "due_date": 1713132000000,
+      "project_id": "1",
+      "id": 7
     }
   ]
 }
