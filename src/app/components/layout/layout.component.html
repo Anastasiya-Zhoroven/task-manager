@@ -1,0 +1,36 @@
+'<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <div class="nav-container">
+      <div class="icon-tabs">
+        <a class="nav-icon" routerLink="/">
+          <mat-icon [ngClass]="{ 'active': getActiveIcon() === 'projects' }" fontIcon="dashboard_customize"></mat-icon>
+        </a>
+        <a class="nav-icon" routerLink="/users">
+          <mat-icon [ngClass]="{ 'active':  getActiveIcon() === 'users' }" fontIcon="people_outline"></mat-icon>
+        </a>
+      </div>
+      <a (click)="logout()" class="nav-icon icon-tabs">
+        <mat-icon fontIcon="logout"></mat-icon>
+      </a>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <span class="dashboard-title"><b>{{getTitle()}}</b></span>
+      <mat-form-field subscriptSizing="dynamic" class="search-input">
+        <mat-label>Search here...</mat-label>
+        <input matInput placeholder="Search here..." type="search" [formControl]="searchControl">
+        <mat-icon matPrefix class="search-icon">search</mat-icon>
+      </mat-form-field>
+      <mat-card-header class="logged-user-info-container">
+        <div mat-card-avatar class="avatar">{{currentUserName && currentUserName[0]}}</div>
+        <div class="logged-user-info">
+          <mat-card-title>{{currentUserName}}</mat-card-title>
+          <mat-card-subtitle>{{currentUserEmail}}</mat-card-subtitle>
+        </div>
+      </mat-card-header>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+'

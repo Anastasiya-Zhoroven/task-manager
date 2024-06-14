@@ -1,0 +1,65 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-title">
+    <b>Task</b>
+  </div>
+  <div class="field-container">
+    <mat-form-field appearance="fill">
+      <mat-label>
+        <mat-icon fontIcon="assignment"></mat-icon> Task title
+      </mat-label>
+      <input matInput type="text" formControlName="title">
+      <mat-error *ngIf="form.get('title')?.invalid && form.get('title')?.touched">
+        {{ getTitleErrorMessage() }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="field-container">
+    <mat-form-field appearance="fill">
+      <mat-label>
+        <mat-icon fontIcon="description"></mat-icon> Description
+      </mat-label>
+      <textarea matInput formControlName="description" cols="10" rows="10"></textarea>
+      <mat-error *ngIf="form.get('description')?.invalid && form.get('description')?.touched">
+        {{ getDescriptionErrorMessage() }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="field-container">
+    <mat-form-field>
+      <mat-label>
+        <mat-icon fontIcon="people_alt"></mat-icon>Assignees
+      </mat-label>
+      <mat-select formControlName="assignees" multiple>
+        <mat-option *ngFor="let user of users" [value]="user.id">{{user.name}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('assignees')?.invalid && form.get('assignees')?.touched">
+        {{ getAssigneesErrorMessage() }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="field-container">
+    <mat-form-field class="example-full-width">
+      <mat-label>Choose a due date</mat-label>
+      <input matInput [min]="minDate" [matDatepicker]="picker" formControlName="due_date">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="form.get('due_date')?.invalid && form.get('due_date')?.touched">
+        {{ getDueDateErrorMessage() }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="field-container">
+    <mat-form-field>
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option *ngFor="let status of statuses" [value]="status.value">
+          {{status.viewValue}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('status')?.invalid && form.get('status')?.touched">
+        {{ getStatusErrorMessage() }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <button type="submit" [disabled]="form.invalid" class="submit-button">Submit</button>
+</form>

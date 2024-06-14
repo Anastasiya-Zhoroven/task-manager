@@ -1,0 +1,12 @@
+<app-layout (search)="search($event)">
+  <h3><b>Your projects</b></h3>
+  <div class="projects-list-container">
+    <div class="add-project-button-container">
+      <button mat-fab color="primary" calss="add-project-button" (click)="openForm()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <p>Add new project</p>
+    </div>
+    <app-project *ngFor="let project of projects" [project]="project" [users]="users" (editProject)="openForm($event)" (deleteProject)="deleteProject($event)"></app-project>
+  </div>
+</app-layout>

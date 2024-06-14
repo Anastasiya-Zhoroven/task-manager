@@ -1,0 +1,34 @@
+<div class="form-container">
+  <div class="form-title">
+    <mat-icon fontIcon="login"></mat-icon>
+    <b>Login</b>
+  </div>
+  <div>
+    <div class="email-input-container">
+      <mat-form-field>
+        <mat-label>
+          <mat-icon fontIcon="mail"></mat-icon> Enter your email
+        </mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email" (blur)="updateEmailErrorMessage()" [(ngModel)]="userEmail" name="userEmail">
+        <mat-error *ngIf="email.invalid">{{emailErrorMessage}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="password-input-container">
+      <mat-form-field>
+        <mat-label>
+          <mat-icon fontIcon="lock_person"></mat-icon> Enter your password
+        </mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" (blur)="updatePasswordErrorMessage()" [(ngModel)]="userPassword" name="userPassword">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="password.invalid">{{passwordErrorMessage}}</mat-error>
+      </mat-form-field>
+    </div>
+    <button class="login-button" (click)="loginButtonClick()">Login</button>
+  </div>
+  <div class="form-change">
+    <p>Don't have an account?</p>
+    <a class="registration-link" routerLink="/registration"><b>Sing up</b></a>
+  </div>
+</div>
