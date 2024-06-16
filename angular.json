@@ -20,7 +20,7 @@
             "allowedCommonJsDependencies": [
               "sha256"
             ],
-            "outputPath": "dist/task-manager",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -36,10 +36,16 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "baseHref": "/task-manager/"
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
