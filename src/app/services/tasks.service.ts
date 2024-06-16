@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { catchError, map, Observable, Subscription, throwError } from 'rxjs';
 import { Task } from '../interfaces/task.interface';
 import { TaskFilters } from '../interfaces/taskFilters.interface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TasksService {
-  apiUrl: string = 'http://localhost:3000';
+  apiUrl: string = environment.apiUrl;
 
   constructor(private readonly http: HttpClient) { }
 

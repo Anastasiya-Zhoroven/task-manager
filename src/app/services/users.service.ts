@@ -4,12 +4,13 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { User } from '../interfaces/user.interface';
 import { UserFilters } from '../interfaces/userFilters.interface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
-  apiUrl: string = 'http://localhost:3000';
+  apiUrl: string = environment.apiUrl;
 
   constructor(private readonly http: HttpClient) { }
 
