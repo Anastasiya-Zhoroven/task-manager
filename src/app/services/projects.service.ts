@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Project } from '../interfaces/project.interface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectsService {
-  apiUrl: string = 'http://localhost:3000';
+  apiUrl: string = environment.apiUrl;
   constructor(private readonly http: HttpClient) { }
 
   getProjects(queryString?: string): Observable<Project[]> {
